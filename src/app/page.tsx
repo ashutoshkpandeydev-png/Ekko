@@ -371,19 +371,34 @@ export default function Home() {
                   perspective: '1000px'
                 }}>
 
-                {/* Main animated gradient */}
+                {/* Main animated gradient with conic gradient for swirl effect */}
+                <motion.div
+                  className="absolute inset-0"
+                  animate={{
+                    rotate: [0, 360],
+                  }}
+                  transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+                  style={{
+                    background: 'conic-gradient(from 0deg, #7C3AED, #3B82F6, #06B6D4, #EC4899, #7C3AED)',
+                  }}
+                />
+                
+                {/* Secondary animated gradient layer */}
                 <motion.div
                   className="absolute inset-0"
                   animate={{
                     background: [
-                      'linear-gradient(135deg, #7C3AED 0%, #3B82F6 25%, #06B6D4 50%, #EC4899 75%, #7C3AED 100%)',
-                      'linear-gradient(135deg, #3B82F6 0%, #06B6D4 25%, #EC4899 50%, #7C3AED 75%, #3B82F6 100%)',
-                      'linear-gradient(135deg, #06B6D4 0%, #EC4899 25%, #7C3AED 50%, #3B82F6 75%, #06B6D4 100%)',
-                      'linear-gradient(135deg, #EC4899 0%, #7C3AED 25%, #3B82F6 50%, #06B6D4 75%, #EC4899 100%)',
-                      'linear-gradient(135deg, #7C3AED 0%, #3B82F6 25%, #06B6D4 50%, #EC4899 75%, #7C3AED 100%)',
+                      'radial-gradient(circle at 30% 30%, rgba(124,58,237,0.8) 0%, transparent 50%), radial-gradient(circle at 70% 70%, rgba(236,72,153,0.6) 0%, transparent 50%)',
+                      'radial-gradient(circle at 70% 30%, rgba(59,130,246,0.8) 0%, transparent 50%), radial-gradient(circle at 30% 70%, rgba(6,182,212,0.6) 0%, transparent 50%)',
+                      'radial-gradient(circle at 70% 70%, rgba(6,182,212,0.8) 0%, transparent 50%), radial-gradient(circle at 30% 30%, rgba(124,58,237,0.6) 0%, transparent 50%)',
+                      'radial-gradient(circle at 30% 70%, rgba(236,72,153,0.8) 0%, transparent 50%), radial-gradient(circle at 70% 30%, rgba(59,130,246,0.6) 0%, transparent 50%)',
+                      'radial-gradient(circle at 30% 30%, rgba(124,58,237,0.8) 0%, transparent 50%), radial-gradient(circle at 70% 70%, rgba(236,72,153,0.6) 0%, transparent 50%)',
                     ]
                   }}
-                  transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
+                  transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+                  style={{
+                    mixBlendMode: 'screen',
+                  }}
                 />
 
                 {/* Animated shine effect */}
