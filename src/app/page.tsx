@@ -423,23 +423,23 @@ export default function Home() {
 
             {/* FLOATING DATA CARDS WITH ADVANCED ANIMATIONS */}
             {[
-              { icon: Brain, label: 'Memory', value: '24,320', desc: 'Interactions', delay: 0.5, angle: 0 },
-              { icon: Users, label: 'Personality Sync', value: '98%', desc: 'Accuracy', delay: 0.6, angle: 90 },
-              { icon: Infinity, label: 'Knowledge', value: '∞', desc: 'Expanding', delay: 0.7, angle: 180 },
-              { icon: Activity, label: 'Learning', value: 'Live', desc: 'Adapting', delay: 0.8, angle: 270 },
+              { icon: Brain, label: 'Memory', value: '24,320', desc: 'Interactions', delay: 0.5, angle: 45, distance: 220 },
+              { icon: Users, label: 'Personality Sync', value: '98%', desc: 'Accuracy', delay: 0.6, angle: 135, distance: 220 },
+              { icon: Infinity, label: 'Knowledge', value: '∞', desc: 'Expanding', delay: 0.7, angle: 225, distance: 220 },
+              { icon: Activity, label: 'Learning', value: 'Live', desc: 'Adapting', delay: 0.8, angle: 315, distance: 220 },
             ].map((card, i) => (
               <motion.div
                 key={i}
-                className="absolute rounded-xl px-5 py-4 w-48"
+                className="absolute rounded-xl px-5 py-4 w-48 top-1/2 left-1/2"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ 
                   opacity: 1, 
                   scale: 1,
-                  x: Math.cos((card.angle * Math.PI) / 180) * 200,
-                  y: Math.sin((card.angle * Math.PI) / 180) * 200
+                  x: Math.cos((card.angle * Math.PI) / 180) * card.distance - 96,
+                  y: Math.sin((card.angle * Math.PI) / 180) * card.distance - 40
                 }}
                 transition={{ delay: card.delay, duration: 0.8 }}
-                whileHover={{ scale: 1.1, y: -10 }}
+                whileHover={{ scale: 1.15, transition: { duration: 0.3 } }}
                 style={{
                   background: 'rgba(255, 255, 255, 0.08)',
                   backdropFilter: 'blur(20px)',
