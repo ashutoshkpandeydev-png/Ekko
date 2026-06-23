@@ -1,20 +1,46 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from 'next'
+import './globals.css'
 
 export const metadata: Metadata = {
-  title: "Ekko — Your AI Twin, Always On",
-  description: "Paste your messages. Ekko learns your voice. Share your link — let anyone talk to a version of you, 24/7.",
-};
+  title: 'EKKO — An AI version of you, built from your memories',
+  description:
+    'Upload chats, emails, notes, and journal entries. Ekko builds a digital twin that sounds like you, remembers what matters to you, and can speak to others on your behalf.',
+  metadataBase: new URL('https://ekko.so'),
+  applicationName: 'EKKO',
+  keywords: [
+    'Ekko',
+    'AI twin',
+    'digital twin',
+    'personal AI',
+    'AI clone',
+    'memory AI',
+    'voice model',
+    'AI persona',
+    'AI identity',
+  ],
+  openGraph: {
+    title: 'EKKO — An AI version of you, built from your memories',
+    description:
+      'Upload chats, emails, notes, and journal entries. Ekko builds a digital twin that sounds like you, remembers what matters to you, and can speak to others on your behalf.',
+    siteName: 'EKKO',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'EKKO — An AI version of you, built from your memories',
+    description:
+      'Upload chats, emails, notes, and journal entries. Ekko builds a digital twin that sounds like you, remembers what matters to you, and can speak to others on your behalf.',
+  },
+}
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
-      </head>
+    <html lang="en" suppressHydrationWarning>
       <body>{children}</body>
     </html>
-  );
+  )
 }
