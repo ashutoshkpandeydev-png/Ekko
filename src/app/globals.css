@@ -3,62 +3,124 @@
 @tailwind utilities;
 
 /* =========================================================
-   EKKO V5 — ULTRA PREMIUM GLOBALS
-   Cinematic / Apple-style / Funded-startup landing polish
-   + HERO/NAV OVERLAP FIX
+   EKKO V6.1 — CINEMATIC FUNDED-STARTUP GLOBAL SYSTEM
+   Apple-style white/silver light atmosphere
    ========================================================= */
 
 :root {
-  /* Core palette */
-  --background: #050607;
-  --background-soft: #0a0d10;
-  --foreground: #f7f8fa;
-  --foreground-soft: rgba(247, 248, 250, 0.78);
-  --muted: rgba(247, 248, 250, 0.56);
+  /* =========================================
+     CORE THEME
+     ========================================= */
+  --background: #040506;
+  --background-soft: #080a0d;
+  --background-elevated: #0b0f13;
+  --foreground: #f8fafc;
+  --foreground-soft: rgba(248, 250, 252, 0.8);
+  --muted: rgba(248, 250, 252, 0.58);
+  --muted-2: rgba(248, 250, 252, 0.4);
+
   --line: rgba(255, 255, 255, 0.08);
   --line-strong: rgba(255, 255, 255, 0.14);
+  --line-soft: rgba(255, 255, 255, 0.05);
 
-  /* Brand */
+  /* =========================================
+     BRAND SYSTEM
+     ========================================= */
   --accent: #8de7d8;
-  --accent-2: #6ed7f7;
-  --accent-strong: #44b8a7;
+  --accent-2: #7be2ff;
+  --accent-3: #b4fff3;
+  --accent-strong: #3ccab3;
   --accent-deep: #123f3a;
+  --accent-shadow: rgba(141, 231, 216, 0.28);
+  --blue-shadow: rgba(123, 226, 255, 0.22);
 
-  /* Surfaces */
+  /* =========================================
+     LIGHT SURFACES
+     ========================================= */
+  --light-bg: #f7f5ef;
+  --light-bg-2: #f1eee6;
+  --light-text: #11110f;
+  --light-text-soft: #5d5a53;
+  --light-line: rgba(18, 26, 30, 0.08);
+
+  /* =========================================
+     PANEL / GLASS TOKENS
+     ========================================= */
   --panel: rgba(255, 255, 255, 0.045);
   --panel-strong: rgba(255, 255, 255, 0.07);
   --panel-soft: rgba(255, 255, 255, 0.03);
-  --panel-light: rgba(255, 255, 255, 0.12);
+  --panel-hard: rgba(255, 255, 255, 0.11);
 
-  /* Hero cinematic overlays */
+  --glass-stroke: rgba(255, 255, 255, 0.1);
+  --glass-stroke-soft: rgba(255, 255, 255, 0.07);
+
+  /* =========================================
+     HERO ATMOSPHERE — APPLE WHITE/SILVER
+     ========================================= */
   --hero-vignette:
-    radial-gradient(circle at 20% 18%, rgba(141, 231, 216, 0.16), transparent 28%),
-    radial-gradient(circle at 82% 18%, rgba(110, 215, 247, 0.12), transparent 24%),
-    radial-gradient(circle at 60% 70%, rgba(255, 255, 255, 0.06), transparent 26%);
+    radial-gradient(circle at 14% 12%, rgba(255, 255, 255, 0.16), transparent 30%),
+    radial-gradient(circle at 84% 12%, rgba(255, 255, 255, 0.13), transparent 28%),
+    radial-gradient(circle at 56% 72%, rgba(255, 255, 255, 0.1), transparent 30%);
 
-  /* Shadows */
+  --hero-glow:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.2), transparent 22%),
+    radial-gradient(circle at 78% 16%, rgba(255, 255, 255, 0.16), transparent 20%),
+    radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.1), transparent 22%);
+
+  /* =========================================
+     SHADOWS
+     ========================================= */
   --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.18);
   --shadow-md: 0 18px 60px rgba(0, 0, 0, 0.28);
   --shadow-lg: 0 28px 100px rgba(0, 0, 0, 0.38);
   --shadow-xl: 0 40px 140px rgba(0, 0, 0, 0.48);
+  --shadow-2xl: 0 60px 180px rgba(0, 0, 0, 0.56);
 
-  /* Radii */
+  /* =========================================
+     RADII
+     ========================================= */
   --radius-xs: 12px;
   --radius-sm: 16px;
   --radius-md: 22px;
   --radius-lg: 28px;
   --radius-xl: 36px;
+  --radius-2xl: 44px;
 
-  /* Layout */
-  --container: 1280px;
+  /* =========================================
+     LAYOUT
+     ========================================= */
+  --container: 1320px;
+  --nav-height: 92px;
 
-  /* IMPORTANT: used to prevent hero text from sitting under fixed navbar */
-  --nav-height: 88px;
-
-  /* Motion */
+  /* =========================================
+     MOTION
+     ========================================= */
   --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+
+  /* =========================================
+     SECTION TINTS
+     ========================================= */
+  --surface-dark-1:
+    radial-gradient(circle at 12% 8%, rgba(255, 255, 255, 0.05), transparent 24%),
+    linear-gradient(180deg, #07090c 0%, #050607 100%);
+
+  --surface-dark-2:
+    radial-gradient(circle at 86% 0%, rgba(255, 255, 255, 0.05), transparent 22%),
+    linear-gradient(180deg, #090c10 0%, #06080a 100%);
+
+  --surface-light:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.5), transparent 24%),
+    linear-gradient(180deg, #f8f6f1 0%, #f2eee6 100%);
+
+  --surface-mint:
+    radial-gradient(circle at 12% 10%, rgba(141, 231, 216, 0.22), transparent 22%),
+    linear-gradient(180deg, #effcf8 0%, #e7faf4 100%);
 }
 
+/* =========================================================
+   RESET / BASE
+   ========================================================= */
 *,
 *::before,
 *::after {
@@ -88,11 +150,37 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   overflow-x: clip;
-
   background:
-    radial-gradient(circle at 12% 0%, rgba(141, 231, 216, 0.10), transparent 26%),
-    radial-gradient(circle at 85% 10%, rgba(110, 215, 247, 0.08), transparent 24%),
+    radial-gradient(circle at 12% 0%, rgba(255, 255, 255, 0.08), transparent 24%),
+    radial-gradient(circle at 88% 8%, rgba(255, 255, 255, 0.06), transparent 22%),
     linear-gradient(180deg, #07090b 0%, #050607 45%, #050607 100%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 14%),
+    radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.06), transparent 32%);
+  opacity: 0.9;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.08;
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.85) 0.7px, transparent 0.7px),
+    radial-gradient(circle at 75% 35%, rgba(255, 255, 255, 0.7) 0.7px, transparent 0.7px),
+    radial-gradient(circle at 45% 80%, rgba(255, 255, 255, 0.7) 0.7px, transparent 0.7px);
+  background-size: 28px 28px, 34px 34px, 40px 40px;
+  mix-blend-mode: soft-light;
 }
 
 a {
@@ -127,13 +215,21 @@ select {
 }
 
 ::selection {
-  background: rgba(141, 231, 216, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   color: #04110f;
 }
 
-/* =========================================
-   Scrollbar
-   ========================================= */
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
 ::-webkit-scrollbar {
   width: 11px;
 }
@@ -144,30 +240,19 @@ select {
 
 ::-webkit-scrollbar-thumb {
   background:
-    linear-gradient(180deg, rgba(141, 231, 216, 0.45), rgba(255, 255, 255, 0.16));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.16));
   border: 3px solid #06080a;
   border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background:
-    linear-gradient(180deg, rgba(141, 231, 216, 0.7), rgba(255, 255, 255, 0.22));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.22));
 }
 
-/* =========================================
-   Typography helpers
-   ========================================= */
-.text-balance {
-  text-wrap: balance;
-}
-
-.text-pretty {
-  text-wrap: pretty;
-}
-
-/* =========================================
-   Base layer
-   ========================================= */
+/* =========================================================
+   BASE LAYER
+   ========================================================= */
 @layer base {
   html.lenis,
   html.lenis body {
@@ -175,31 +260,20 @@ select {
   }
 
   *:focus-visible {
-    outline: 2px solid rgba(141, 231, 216, 0.95);
+    outline: 2px solid rgba(255, 255, 255, 0.95);
     outline-offset: 3px;
   }
 
   ::placeholder {
     color: rgba(247, 248, 250, 0.42);
   }
-
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 14%),
-      radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.06), transparent 32%);
-    opacity: 0.9;
-  }
 }
 
-/* =========================================
-   Components layer
-   ========================================= */
+/* =========================================================
+   COMPONENTS
+   ========================================================= */
 @layer components {
+  /* ---------- Layout ---------- */
   .ekko-container {
     width: min(100% - 2rem, var(--container));
     margin-inline: auto;
@@ -211,17 +285,21 @@ select {
     }
   }
 
+  .ekko-shell {
+    position: relative;
+    isolation: isolate;
+    background:
+      radial-gradient(circle at 12% 0%, rgba(255, 255, 255, 0.06), transparent 26%),
+      radial-gradient(circle at 85% 10%, rgba(255, 255, 255, 0.05), transparent 24%),
+      linear-gradient(180deg, #07090b 0%, #050607 45%, #050607 100%);
+  }
+
   .ekko-section {
     position: relative;
     z-index: 1;
   }
 
-  /* =====================================================
-     HERO / NAV OVERLAP FIX
-     -----------------------------------------------------
-     Use .ekko-page-with-nav on <main>
-     Use .ekko-hero-safe on hero section
-     ===================================================== */
+  /* ---------- NAV / HERO SAFETY ---------- */
   .ekko-page-with-nav {
     padding-top: calc(var(--nav-height) + 10px);
   }
@@ -238,7 +316,7 @@ select {
 
   @media (max-width: 768px) {
     :root {
-      --nav-height: 76px;
+      --nav-height: 78px;
     }
 
     .ekko-page-with-nav {
@@ -250,34 +328,52 @@ select {
     }
   }
 
-  /* ---------- Glass / premium surfaces ---------- */
+  /* =====================================================
+     GLASS / CARDS / SURFACES
+     ===================================================== */
   .ekko-glass {
     position: relative;
+    overflow: hidden;
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.04));
-    border: 1px solid rgba(255, 255, 255, 0.10);
+      linear-gradient(180deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.045));
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.12),
-      0 24px 80px rgba(0, 0, 0, 0.32);
+      inset 0 1px 0 rgba(255, 255, 255, 0.14),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.03),
+      0 24px 80px rgba(0, 0, 0, 0.34);
     backdrop-filter: blur(24px) saturate(150%);
     -webkit-backdrop-filter: blur(24px) saturate(150%);
   }
 
+  .ekko-glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 24%),
+      radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.08), transparent 30%);
+    opacity: 0.7;
+  }
+
   .ekko-glass-soft {
     position: relative;
+    overflow: hidden;
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
+      linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.035));
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.10),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
       0 16px 50px rgba(0, 0, 0, 0.22);
     backdrop-filter: blur(18px) saturate(140%);
     -webkit-backdrop-filter: blur(18px) saturate(140%);
   }
 
   .ekko-panel {
+    position: relative;
+    overflow: hidden;
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.028));
+      linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.028));
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.08),
@@ -287,105 +383,217 @@ select {
   }
 
   .ekko-panel-light {
-    background: rgba(255, 255, 255, 0.82);
+    position: relative;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(248, 251, 250, 0.82));
     border: 1px solid rgba(18, 26, 30, 0.08);
-    box-shadow: 0 20px 60px rgba(10, 18, 24, 0.10);
+    box-shadow:
+      0 20px 60px rgba(10, 18, 24, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
   }
 
   .ekko-card {
+    position: relative;
+    overflow: hidden;
     border-radius: var(--radius-md);
     border: 1px solid rgba(255, 255, 255, 0.08);
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.028));
+      linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.028));
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.08),
       0 18px 60px rgba(0, 0, 0, 0.24);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
+    transition:
+      transform 0.45s var(--ease-premium),
+      box-shadow 0.45s var(--ease-premium),
+      border-color 0.45s var(--ease-premium),
+      background 0.45s var(--ease-premium);
+  }
+
+  .ekko-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 22%);
+    opacity: 0.9;
+  }
+
+  .ekko-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.09),
+      0 26px 80px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.04);
   }
 
   .ekko-card-light {
+    position: relative;
+    overflow: hidden;
     border-radius: var(--radius-md);
     border: 1px solid rgba(18, 26, 30, 0.08);
     background:
       linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(246, 249, 248, 0.95));
     box-shadow:
-      0 18px 60px rgba(16, 24, 30, 0.10),
-      inset 0 1px 0 rgba(255, 255, 255, 0.65);
+      0 18px 60px rgba(16, 24, 30, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    transition:
+      transform 0.45s var(--ease-premium),
+      box-shadow 0.45s var(--ease-premium),
+      border-color 0.45s var(--ease-premium);
   }
 
-  /* ---------- Cinematic overlays ---------- */
-  .ekko-hero-vignette {
-    background: var(--hero-vignette);
+  .ekko-card-light:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 24px 80px rgba(16, 24, 30, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
   }
 
-  .ekko-vignette-dark {
-    background:
-      linear-gradient(90deg, rgba(5, 6, 7, 0.72) 0%, rgba(5, 6, 7, 0.36) 26%, rgba(5, 6, 7, 0.12) 52%, rgba(5, 6, 7, 0.24) 100%),
-      linear-gradient(180deg, rgba(5, 6, 7, 0.12) 0%, rgba(5, 6, 7, 0.04) 42%, rgba(5, 6, 7, 0.72) 100%);
-  }
-
-  .ekko-noise {
+  .ekko-card-spotlight {
     position: relative;
+    overflow: hidden;
   }
 
-  .ekko-noise::before {
+  .ekko-card-spotlight::after {
     content: '';
     position: absolute;
-    inset: 0;
+    inset: -30%;
     pointer-events: none;
-    opacity: 0.05;
-    mix-blend-mode: soft-light;
-    background-image:
-      radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.8) 0.7px, transparent 0.7px),
-      radial-gradient(circle at 75% 35%, rgba(255, 255, 255, 0.6) 0.7px, transparent 0.7px),
-      radial-gradient(circle at 45% 80%, rgba(255, 255, 255, 0.7) 0.7px, transparent 0.7px);
-    background-size: 26px 26px, 32px 32px, 38px 38px;
+    background:
+      radial-gradient(circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%), rgba(255, 255, 255, 0.12), transparent 28%);
+    opacity: 0;
+    transition: opacity 0.45s var(--ease-premium);
   }
 
-  /* ---------- Premium buttons ---------- */
+  .ekko-card-spotlight:hover::after {
+    opacity: 1;
+  }
+
+  /* =====================================================
+     NAVBAR
+     ===================================================== */
+  .ekko-nav-shell {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.04));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 20px 60px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(18px) saturate(150%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+  }
+
+  /* =====================================================
+     PILLS
+     ===================================================== */
+  .ekko-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.25rem;
+    border-radius: 999px;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  .ekko-pill-dark {
+    color: rgba(247, 248, 250, 0.9);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.04));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 10px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  .ekko-pill-light {
+    color: #21564f;
+    background: rgba(141, 231, 216, 0.14);
+    border: 1px solid rgba(68, 184, 167, 0.16);
+  }
+
+  /* =====================================================
+     BUTTONS
+     ===================================================== */
   .ekko-btn {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.625rem;
     border-radius: 999px;
-    padding: 0.9rem 1.25rem;
+    padding: 0.95rem 1.3rem;
     font-size: 0.95rem;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1;
     transition:
       transform 0.35s var(--ease-premium),
       box-shadow 0.35s var(--ease-premium),
       background-color 0.35s var(--ease-premium),
       border-color 0.35s var(--ease-premium),
-      color 0.35s var(--ease-premium);
+      color 0.35s var(--ease-premium),
+      opacity 0.35s var(--ease-premium);
     will-change: transform;
+    overflow: hidden;
+  }
+
+  .ekko-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        110deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.12) 35%,
+        rgba(255, 255, 255, 0.28) 50%,
+        rgba(255, 255, 255, 0.12) 65%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    background-size: 220% 100%;
+    opacity: 0;
+    transition: opacity 0.35s var(--ease-premium);
   }
 
   .ekko-btn:hover {
     transform: translateY(-1px);
   }
 
+  .ekko-btn:hover::before {
+    opacity: 1;
+    animation: ekko-shimmer 2.1s linear infinite;
+  }
+
   .ekko-btn-primary {
     color: #06100f;
     background:
-      linear-gradient(180deg, #ffffff 0%, #dffcf6 100%);
+      linear-gradient(180deg, #ffffff 0%, #e6fff8 100%);
     box-shadow:
-      0 16px 50px rgba(141, 231, 216, 0.18),
+      0 16px 50px rgba(255, 255, 255, 0.18),
       0 10px 30px rgba(255, 255, 255, 0.08);
   }
 
   .ekko-btn-primary:hover {
     box-shadow:
-      0 22px 60px rgba(141, 231, 216, 0.24),
-      0 12px 34px rgba(255, 255, 255, 0.10);
+      0 24px 64px rgba(255, 255, 255, 0.24),
+      0 12px 34px rgba(255, 255, 255, 0.1);
   }
 
   .ekko-btn-secondary {
     color: #f7f8fa;
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.05));
+      linear-gradient(180deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.05));
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.08),
@@ -396,50 +604,23 @@ select {
 
   .ekko-btn-secondary:hover {
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
+      linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.06));
   }
 
   .ekko-btn-ghost-light {
     color: #071110;
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 252, 251, 0.88));
+      linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 252, 251, 0.9));
     border: 1px solid rgba(12, 26, 24, 0.08);
     box-shadow: 0 14px 36px rgba(12, 20, 24, 0.08);
   }
 
-  /* ---------- Tags / pills ---------- */
-  .ekko-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    min-height: 2.25rem;
-    border-radius: 999px;
-    padding: 0.45rem 0.9rem;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-  }
-
-  .ekko-pill-dark {
-    color: rgba(247, 248, 250, 0.88);
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.04));
-    border: 1px solid rgba(255, 255, 255, 0.10);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-  }
-
-  .ekko-pill-light {
-    color: #21564f;
-    background: rgba(141, 231, 216, 0.14);
-    border: 1px solid rgba(68, 184, 167, 0.16);
-  }
-
-  /* ---------- Gradient text ---------- */
+  /* =====================================================
+     TYPOGRAPHY SYSTEM
+     ===================================================== */
   .ekko-gradient-text {
     background:
-      linear-gradient(180deg, #ffffff 0%, #d7f9f2 56%, #9cebdd 100%);
+      linear-gradient(180deg, #ffffff 0%, #f1f5f4 52%, #d8dedd 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -453,46 +634,136 @@ select {
     color: transparent;
   }
 
-  /* ---------- Section backgrounds ---------- */
+  .ekko-heading-xl {
+    font-size: clamp(3rem, 7vw, 7.4rem);
+    line-height: 0.92;
+    letter-spacing: -0.055em;
+  }
+
+  .ekko-heading-lg {
+    font-size: clamp(2.2rem, 5vw, 4.8rem);
+    line-height: 0.96;
+    letter-spacing: -0.045em;
+  }
+
+  .ekko-heading-md {
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+  }
+
+  .ekko-body-lg {
+    font-size: clamp(1.05rem, 1.5vw, 1.28rem);
+    line-height: 1.85;
+  }
+
+  .ekko-caption {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  /* =====================================================
+     SURFACES
+     ===================================================== */
   .ekko-surface-dark {
-    background:
-      radial-gradient(circle at 10% 10%, rgba(141, 231, 216, 0.08), transparent 24%),
-      linear-gradient(180deg, #080b0d 0%, #050607 100%);
+    background: var(--surface-dark-1);
   }
 
   .ekko-surface-dark-2 {
-    background:
-      radial-gradient(circle at 85% 0%, rgba(110, 215, 247, 0.08), transparent 22%),
-      linear-gradient(180deg, #0a0d10 0%, #06080a 100%);
+    background: var(--surface-dark-2);
   }
 
   .ekko-surface-light {
-    background:
-      radial-gradient(circle at top, rgba(141, 231, 216, 0.12), transparent 24%),
-      linear-gradient(180deg, #f8f6f1 0%, #f2eee6 100%);
-    color: #11110f;
+    background: var(--surface-light);
+    color: var(--light-text);
   }
 
   .ekko-surface-mint {
-    background:
-      radial-gradient(circle at 12% 10%, rgba(141, 231, 216, 0.22), transparent 22%),
-      linear-gradient(180deg, #effcf8 0%, #e7faf4 100%);
+    background: var(--surface-mint);
     color: #071110;
   }
 
-  /* ---------- Premium navbar ---------- */
-  .ekko-nav-shell {
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
-    border: 1px solid rgba(255, 255, 255, 0.10);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.08),
-      0 20px 60px rgba(0, 0, 0, 0.26);
-    backdrop-filter: blur(18px) saturate(150%);
-    -webkit-backdrop-filter: blur(18px) saturate(150%);
+  /* =====================================================
+     HERO ATMOSPHERE — APPLE WHITE/SILVER
+     ===================================================== */
+  .ekko-hero-vignette {
+    background: var(--hero-vignette);
   }
 
-  /* ---------- Loader styles ---------- */
+  .ekko-vignette-dark {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(4, 5, 6, 0.6) 0%,
+        rgba(4, 5, 6, 0.24) 24%,
+        rgba(4, 5, 6, 0.05) 52%,
+        rgba(4, 5, 6, 0.14) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(4, 5, 6, 0.05) 0%,
+        rgba(4, 5, 6, 0.02) 42%,
+        rgba(4, 5, 6, 0.5) 100%
+      );
+  }
+
+  .ekko-noise {
+    position: relative;
+  }
+
+  .ekko-noise::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.055;
+    mix-blend-mode: soft-light;
+    background-image:
+      radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.8) 0.7px, transparent 0.7px),
+      radial-gradient(circle at 75% 35%, rgba(255, 255, 255, 0.6) 0.7px, transparent 0.7px),
+      radial-gradient(circle at 45% 80%, rgba(255, 255, 255, 0.7) 0.7px, transparent 0.7px);
+    background-size: 26px 26px, 32px 32px, 38px 38px;
+  }
+
+  /* =====================================================
+     MOBILE SHEET
+     ===================================================== */
+  .ekko-mobile-sheet {
+    background:
+      linear-gradient(180deg, rgba(10, 12, 14, 0.96), rgba(5, 6, 7, 0.96));
+    backdrop-filter: blur(22px) saturate(140%);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+  }
+
+  /* =====================================================
+     DIVIDERS / LOADERS
+     ===================================================== */
+  .ekko-divider {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 18%,
+      rgba(255, 255, 255, 0.1) 82%,
+      transparent 100%
+    );
+  }
+
+  .ekko-divider-dark {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(12, 26, 24, 0.1) 18%,
+      rgba(12, 26, 24, 0.1) 82%,
+      transparent 100%
+    );
+  }
+
   .ekko-loader-ring {
     position: relative;
     overflow: hidden;
@@ -505,48 +776,37 @@ select {
     height: 100%;
     border-radius: inherit;
     background:
-      linear-gradient(90deg, #8de7d8 0%, #b8fff2 40%, #ffffff 65%, #8de7d8 100%);
+      linear-gradient(90deg, #ffffff 0%, #f1f5f4 40%, #ffffff 65%, #d8dedd 100%);
     background-size: 200% 100%;
     animation: ekko-shimmer 2s linear infinite;
   }
 
-  /* ---------- FAQ / pricing helpers ---------- */
-  .ekko-divider {
-    height: 1px;
-    width: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.10) 18%,
-      rgba(255, 255, 255, 0.10) 82%,
-      transparent 100%
-    );
+  /* =====================================================
+     OVERLAP-SAFE HERO FLOATING STACK (V6.1 FIX)
+     ===================================================== */
+  .ekko-hero-stack {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    position: relative;
   }
 
-  .ekko-divider-dark {
-    height: 1px;
+  .ekko-hero-stack-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .ekko-float-card-safe {
+    position: relative;
     width: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(12, 26, 24, 0.10) 18%,
-      rgba(12, 26, 24, 0.10) 82%,
-      transparent 100%
-    );
   }
 }
 
-/* =========================================
-   Utilities layer
-   ========================================= */
+/* =========================================================
+   UTILITIES
+   ========================================================= */
 @layer utilities {
-  .ekko-shell {
-    background:
-      radial-gradient(circle at 12% 0%, rgba(141, 231, 216, 0.10), transparent 26%),
-      radial-gradient(circle at 85% 10%, rgba(110, 215, 247, 0.08), transparent 24%),
-      linear-gradient(180deg, #07090b 0%, #050607 45%, #050607 100%);
-  }
-
   .ekko-grid {
     background-image:
       linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
@@ -571,6 +831,23 @@ select {
     -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 100%);
   }
 
+  .ekko-grid-radial {
+    position: relative;
+  }
+
+  .ekko-grid-radial::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(circle at 50% 40%, black 20%, transparent 78%);
+    -webkit-mask-image: radial-gradient(circle at 50% 40%, black 20%, transparent 78%);
+  }
+
   .ekko-border-gradient {
     position: relative;
     isolation: isolate;
@@ -586,7 +863,7 @@ select {
       linear-gradient(
         135deg,
         rgba(255, 255, 255, 0.28),
-        rgba(141, 231, 216, 0.20),
+        rgba(255, 255, 255, 0.16),
         rgba(255, 255, 255, 0.08)
       );
     -webkit-mask:
@@ -600,21 +877,28 @@ select {
 
   .ekko-glow {
     box-shadow:
-      0 0 0 1px rgba(141, 231, 216, 0.08),
-      0 0 80px rgba(141, 231, 216, 0.10),
+      0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 0 80px rgba(255, 255, 255, 0.08),
       0 30px 100px rgba(0, 0, 0, 0.32);
   }
 
   .ekko-glow-soft {
     box-shadow:
-      0 0 0 1px rgba(141, 231, 216, 0.05),
-      0 0 50px rgba(141, 231, 216, 0.08);
+      0 0 0 1px rgba(255, 255, 255, 0.05),
+      0 0 50px rgba(255, 255, 255, 0.06);
   }
 
   .ekko-shadow-premium {
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.10),
-      0 24px 90px rgba(0, 0, 0, 0.30);
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 24px 90px rgba(0, 0, 0, 0.3);
+  }
+
+  .ekko-shadow-ultra {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 40px 140px rgba(0, 0, 0, 0.38),
+      0 0 120px rgba(255, 255, 255, 0.06);
   }
 
   .ekko-mask-bottom {
@@ -647,6 +931,33 @@ select {
     will-change: transform;
   }
 
+  .ekko-tilt-deep {
+    transform:
+      perspective(1800px)
+      rotateX(var(--tilt-x, 0deg))
+      rotateY(var(--tilt-y, 0deg))
+      translateZ(0);
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  .ekko-3d-layer {
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  .ekko-3d-raise-sm {
+    transform: translateZ(18px);
+  }
+
+  .ekko-3d-raise-md {
+    transform: translateZ(36px);
+  }
+
+  .ekko-3d-raise-lg {
+    transform: translateZ(56px);
+  }
+
   .ekko-float {
     animation: ekko-float 8s var(--ease-premium) infinite;
   }
@@ -659,6 +970,10 @@ select {
   .ekko-float-slow {
     animation: ekko-float 11s var(--ease-premium) infinite;
     animation-delay: 0.8s;
+  }
+
+  .ekko-breathe {
+    animation: ekko-breathe 6s ease-in-out infinite;
   }
 
   .ekko-shimmer {
@@ -681,34 +996,10 @@ select {
       0 10px 40px rgba(0, 0, 0, 0.28);
   }
 
-  .ekko-heading-xl {
-    font-size: clamp(3rem, 7vw, 7.4rem);
-    line-height: 0.92;
-    letter-spacing: -0.05em;
-  }
-
-  .ekko-heading-lg {
-    font-size: clamp(2.2rem, 5vw, 4.8rem);
-    line-height: 0.96;
-    letter-spacing: -0.04em;
-  }
-
-  .ekko-heading-md {
-    font-size: clamp(1.8rem, 3vw, 3rem);
-    line-height: 1.02;
-    letter-spacing: -0.03em;
-  }
-
-  .ekko-body-lg {
-    font-size: clamp(1.05rem, 1.5vw, 1.32rem);
-    line-height: 1.85;
-  }
-
-  .ekko-caption {
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    font-weight: 700;
+  .ekko-text-shadow-strong {
+    text-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.04),
+      0 18px 70px rgba(0, 0, 0, 0.4);
   }
 
   .ekko-premium-ring {
@@ -717,17 +1008,33 @@ select {
       0 0 0 8px rgba(255, 255, 255, 0.02);
   }
 
-  .ekko-mobile-sheet {
-    background:
-      linear-gradient(180deg, rgba(10, 12, 14, 0.96), rgba(5, 6, 7, 0.96));
-    backdrop-filter: blur(22px) saturate(140%);
-    -webkit-backdrop-filter: blur(22px) saturate(140%);
+  .ekko-premium-stroke {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 0 0 1px rgba(255, 255, 255, 0.02);
+  }
+
+  .ekko-highlight-line {
+    position: relative;
+  }
+
+  .ekko-highlight-line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.2em;
+    width: 100%;
+    height: 0.12em;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #ffffff, rgba(255, 255, 255, 0.7));
+    opacity: 0.75;
   }
 }
 
-/* =========================================
-   Keyframes
-   ========================================= */
+/* =========================================================
+   KEYFRAMES
+   ========================================================= */
 @keyframes ekko-float {
   0%,
   100% {
@@ -735,6 +1042,18 @@ select {
   }
   50% {
     transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes ekko-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.92;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 1;
   }
 }
 
@@ -747,9 +1066,61 @@ select {
   }
 }
 
-/* =========================================
-   Reduced motion
-   ========================================= */
+/* =========================================================
+   V7 — CALM PREMIUM HERO SYSTEM
+   ========================================================= */
+.ekko-hero-v7 {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+  padding-top: calc(var(--nav-height) + 2rem);
+  padding-bottom: 3rem;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(255,255,255,0.14), transparent 40%),
+    radial-gradient(circle at 82% 78%, rgba(255,255,255,0.08), transparent 42%),
+    linear-gradient(180deg, #07090b 0%, #050607 60%, #050607 100%);
+}
+
+.ekko-hero-v7-heading {
+  font-size: clamp(2.6rem, 5.4vw, 5.4rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+  overflow: visible;
+}
+
+.ekko-hero-v7-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 30px 100px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  padding: 2rem;
+}
+
+.ekko-hero-v7-ring {
+  position: relative;
+  width: 168px;
+  height: 168px;
+}
+
+.ekko-cinematic-section {
+  position: relative;
+  height: 320vh;
+  min-height: 1800px;
+  background: #050607;
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
